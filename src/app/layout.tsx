@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <header>Hỏi dân IT hoặc không hỏi.</header>
         {children}
-        <footer>RYO</footer>
+        <footer>Footer</footer>
         </body>
     </html>
   )
