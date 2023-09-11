@@ -1,6 +1,8 @@
 'use client' // render on client side only
 
 import { useRouter } from "next/navigation";
+import { Button } from "react-bootstrap";
+
 
 const Facebook = () => {
 
@@ -14,6 +16,7 @@ const Facebook = () => {
         <div>
             <h1>Facebook</h1>
             <div>
+                <Button variant="success">Hỏi dân IT</Button>
                 <button onClick={()=>handleBtn()}>Back Home</button>
             </div>
         </div>

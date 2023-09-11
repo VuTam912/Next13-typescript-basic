@@ -33,3 +33,8 @@ note: create folder => đặt tên folder phải viết thường ko viết hoa.
 - Tóm lại phải theo rule của NEXT13.js không được tự ý thay đổi.
 
 file layout.tsx => Giup táo sử dụng lại cho component khác (Menu,header,footer...)
+
+## libraries
+
+npm: boostrap:
+npm i --save-exact react-bootstrap@2.8.0 bootstrap@5.3.0
