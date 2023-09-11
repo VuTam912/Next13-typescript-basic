@@ -1,14 +1,15 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <>
     <div>
       <ul>
-        <li><a href="/facebook">Facebook</a></li>
-        <li><a href="/tiktok" style={{color:'red'}}>TikTok</a></li>
-        <li><a href="/youtube">Youtube</a></li>
+        {/* use Link will not need refresh page */}
+        <li><Link href="/facebook">Facebook</Link></li>
+        <li><Link href="/tiktok" style={{color:'red'}}>TikTok</Link></li>
+        <li><Link href="/youtube">Youtube</Link></li>
         
       </ul>
     </div>
