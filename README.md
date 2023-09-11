@@ -31,3 +31,5 @@ Nếu muốn tạo route là /admin => tạo folder Admin và bên trong folder 
 note: create folder => đặt tên folder phải viết thường ko viết hoa.
 
 - Tóm lại phải theo rule của NEXT13.js không được tự ý thay đổi.
+
+file layout.tsx => Giup táo sử dụng lại cho component khác (Menu,header,footer...)
