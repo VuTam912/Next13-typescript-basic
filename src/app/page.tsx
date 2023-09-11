@@ -1,7 +1,9 @@
 
+
 import Link from 'next/link'
 import x from '@/styles/app.module.css';  // x from => module
 import y from '@/styles/hoidanit.module.css'
+import AppTable from '@/components/app.table';
 
 export default function Home() {
   return (
@@ -22,6 +24,9 @@ export default function Home() {
           </li>
         
       </ul>
+
+      <AppTable />
+
     </div>
     </>
   )
