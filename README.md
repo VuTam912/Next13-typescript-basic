@@ -37,10 +37,14 @@ file layout.tsx => Giup táo sử dụng lại cho component khác (Menu,header,
 
 ## libraries
 
-npm: boostrap:
-npm i --save-exact react-bootstrap@2.8.0 bootstrap@5.3.0
+- boostrap:
+  npm i --save-exact react-bootstrap@2.8.0 bootstrap@5.3.0
+- SWR - react-hook for Data Fetching
+  npm i --save-exact swr@2.2.0
 
 # chay backend :
 
 -để dự án có data.
 backend-fake-json
+
+cách chạy: npm run dev (cmd or vscode)
