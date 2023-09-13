@@ -4,6 +4,8 @@ import useSWR from 'swr';
 
 const BlogPage = () => {
 	// kieu du lieu cua variable la string
+
+	// GET ALL DATA FROM API - GET
 	const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 	const { data, error, isLoading } = useSWR(
