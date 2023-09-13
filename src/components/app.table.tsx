@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import CreateModal from './create.modal';
 import { useState } from 'react';
 import UpdateModal from './update.modal';
+import DeleteModal from './delete.mdal';
 interface IProps {
 	// cau truc cua types blogs
 	blogs: IBlog[];
@@ -18,15 +19,25 @@ const AppTable = (props: IProps) => {
 	const [showModalCreate, setShowModalCreate] = useState(false);
 	// modal edit
 	const [showModalUpdate, setShowModalUpdate] = useState(false);
+	// modal delete
+	const [showModalDelete, setShowModalDelete] = useState(false);
 
 	// store blog để truyển qua edit (update.modal)
 	const [DatablogEdit, SetDataBlogEdit] = useState<IBlog | null>(null);
+	// store blog để truyển qua delete (delete.modal) by ID
+	const [DatablogDelete, SetDataBlogDelete] = useState<IBlog | null>(null);
 
 	// handle Edit
 	const handleEidtData = (blog: IBlog) => {
 		// was get ID of blog
 		SetDataBlogEdit(blog);
 		setShowModalUpdate(true);
+	};
+	// handle Delete blog
+	const handleDeleteData = (blog: IBlog) => {
+		// was get ID of blog
+		SetDataBlogDelete(blog);
+		setShowModalDelete(true);
 	};
 
 	return (
@@ -68,7 +79,13 @@ const AppTable = (props: IProps) => {
 										{' '}
 										Edit{' '}
 									</Button>
-									<Button variant='danger'> Delete </Button>
+									<Button
+										variant='danger'
+										onClick={() => handleDeleteData(blog)}
+									>
+										{' '}
+										Delete{' '}
+									</Button>
 								</td>
 							</tr>
 						);
@@ -76,6 +93,7 @@ const AppTable = (props: IProps) => {
 				</tbody>
 			</Table>
 			{/* truyen props vao modal de nhan thong bao OnClick table  */}
+			{/* Show/hide Modal */}
 			<CreateModal
 				showModalCreate={showModalCreate}
 				setShowModalCreate={setShowModalCreate}
@@ -85,6 +103,12 @@ const AppTable = (props: IProps) => {
 				setShowModalUpdate={setShowModalUpdate}
 				DatablogEdit={DatablogEdit} // truyen du lieu blog vao các useState
 				SetDataBlogEdit={SetDataBlogEdit}
+			/>
+			<DeleteModal
+				showModalDelete={showModalDelete}
+				setShowModalDelete={setShowModalDelete}
+				DatablogDelete={DatablogDelete}
+				SetDataBlogDelete={SetDataBlogDelete}
 			/>
 		</>
 	);

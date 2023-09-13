@@ -50,3 +50,30 @@ file layout.tsx => Giup táo sử dụng lại cho component khác (Menu,header,
 backend-fake-json
 
 cách chạy: npm run dev (cmd or vscode)
+
+### `II.Các endpoint (apis) sử dụng:`
+
+```
+1. Lấy tất cả blogs:
+GET    /blogs
+
+2. Lấy blog theo id
+GET    /blogs/:id
+
+ví dụ: GET    /blogs/1
+
+3. Tạo mới 1 blog
+POST   /blogs
+body truyền lên object { title, author, content}
+
+4. Cập nhật 1 blog
+PUT /blogs/:id
+body truyền lên object { title, author, content}
+
+ví dụ: PUT /blogs/1
+
+5. Xóa 1 blog
+DELETE  /blogs/:id
+
+ví dụ: DELETE   /blogs/1
+```
