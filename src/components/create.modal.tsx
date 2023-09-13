@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { toast } from 'react-toastify';
 
 // define types for variable
 interface IProps {
@@ -20,7 +21,33 @@ function CreateModal(props: IProps) {
 
 	// handle submit
 	const handleSubmit = () => {
-		console.log('---handleSubmit: ', title, author, content);
+		if (!title) {
+			toast.error('Title is required!');
+			return;
+		}
+		if (!author) {
+			toast.error('Author is required!');
+			return;
+		}
+		if (!content) {
+			toast.error('Content is required!');
+			return;
+		}
+		fetch('http://localhost:8000/blogs', {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json, text/plain, */*',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ title, author, content }),
+		})
+			.then((res) => res.json())
+			.then((res) => {
+				if (res) {
+					toast.success('Create new blog success!');
+					handleColseModal();
+				}
+			});
 	};
 
 	// When the modal is closed, all state must be empty.
