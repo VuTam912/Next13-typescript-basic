@@ -23,22 +23,16 @@ export default function Home() {
 		}
 	);
 
-	console.log('--check data: ', data);
+	// khi load API nó sẽ hiện render ở dưới.
+	if (!data) {
+		return <div>Loading...</div>;
+	}
 
-	// useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		const res = await fetch('http://localhost:8000/blogs');
-	// 		// the data is using JSON. => res.json()
-	// 		const data = await res.json();
-	// 		console.log('--Check res: ', data);
-	// 	};
-
-	// 	fetchData();
-	// }, []);
-
+	// khi load API thì trả về data của API
 	return (
 		<>
 			<div>
+				{/* "?" kiểm tra xem một giá trị có null hoặc undefined hay không => nếu có tự trả 0 hoặc ... và code vẫn chạy mà ko có báo lỗi.  */}
 				<div>{data?.length}</div>
 				<ul>
 					{/* use Link will not need refresh page */}
@@ -55,7 +49,7 @@ export default function Home() {
 					</li>
 				</ul>
 
-				<AppTable />
+				<AppTable blogs={data} />
 			</div>
 		</>
 	);
