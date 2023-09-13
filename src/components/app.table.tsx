@@ -5,6 +5,7 @@ import CreateModal from './create.modal';
 import { useState } from 'react';
 import UpdateModal from './update.modal';
 import DeleteModal from './delete.mdal';
+import Link from 'next/link';
 interface IProps {
 	// cau truc cua types blogs
 	blogs: IBlog[];
@@ -70,7 +71,9 @@ const AppTable = (props: IProps) => {
 								<td>{blog.title}</td>
 								<td>{blog.author}</td>
 								<td>
-									<Button> View </Button>
+									<Link href={`/blogs/${blog.id}`} className='btn btn-primary'>
+										View
+									</Link>
 									<Button
 										variant='warning'
 										className='mx-3'
