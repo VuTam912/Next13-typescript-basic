@@ -3,6 +3,7 @@
 - React 18
 - Next 13
 - Typescript
+- backend
 
 ## Cấu trúc dụ án Next.js cài đặt:
 
@@ -38,3 +39,8 @@ file layout.tsx => Giup táo sử dụng lại cho component khác (Menu,header,
 
 npm: boostrap:
 npm i --save-exact react-bootstrap@2.8.0 bootstrap@5.3.0
+
+# chay backend :
+
+-để dự án có data.
+backend-fake-json
