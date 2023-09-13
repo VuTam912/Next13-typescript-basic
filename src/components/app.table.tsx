@@ -3,6 +3,7 @@ import Table from 'react-bootstrap/Table';
 import { Button } from 'react-bootstrap';
 import CreateModal from './create.modal';
 import { useState } from 'react';
+import UpdateModal from './update.modal';
 interface IProps {
 	// cau truc cua types blogs
 	blogs: IBlog[];
@@ -12,7 +13,21 @@ const AppTable = (props: IProps) => {
 	const { blogs } = props;
 	console.log('---check props blog: ', blogs);
 
+	// All state
+	// modal create
 	const [showModalCreate, setShowModalCreate] = useState(false);
+	// modal edit
+	const [showModalUpdate, setShowModalUpdate] = useState(false);
+
+	// store blog để truyển qua edit (update.modal)
+	const [DatablogEdit, SetDataBlogEdit] = useState<IBlog | null>(null);
+
+	// handle Edit
+	const handleEidtData = (blog: IBlog) => {
+		// was get ID of blog
+		SetDataBlogEdit(blog);
+		setShowModalUpdate(true);
+	};
 
 	return (
 		<>
@@ -45,7 +60,11 @@ const AppTable = (props: IProps) => {
 								<td>{blog.author}</td>
 								<td>
 									<Button> View </Button>
-									<Button variant='warning' className='mx-3'>
+									<Button
+										variant='warning'
+										className='mx-3'
+										onClick={() => handleEidtData(blog)}
+									>
 										{' '}
 										Edit{' '}
 									</Button>
@@ -60,6 +79,12 @@ const AppTable = (props: IProps) => {
 			<CreateModal
 				showModalCreate={showModalCreate}
 				setShowModalCreate={setShowModalCreate}
+			/>
+			<UpdateModal
+				showModalUpdate={showModalUpdate}
+				setShowModalUpdate={setShowModalUpdate}
+				DatablogEdit={DatablogEdit} // truyen du lieu blog vao các useState
+				SetDataBlogEdit={SetDataBlogEdit}
 			/>
 		</>
 	);
