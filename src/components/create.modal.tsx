@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { toast } from 'react-toastify';
+import { mutate } from 'swr';
 
 // define types for variable
 interface IProps {
@@ -46,6 +47,8 @@ function CreateModal(props: IProps) {
 				if (res) {
 					toast.success('Create new blog success!');
 					handleColseModal();
+					// when create a blog done. then will re-render/update data in table
+					mutate('http://localhost:8000/blogs');
 				}
 			});
 	};

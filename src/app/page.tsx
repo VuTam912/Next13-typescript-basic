@@ -48,8 +48,8 @@ export default function Home() {
 						<Link href='/youtube'>Youtube</Link>
 					</li>
 				</ul>
-
-				<AppTable blogs={data} />
+				{/* Sort by desc id */}
+				<AppTable blogs={data?.sort((a: any, b: any) => b.id - a.id)} />
 			</div>
 		</>
 	);
