@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 // title of blogList
 // Nhớ đi cùng layout.tsx và page.tsx => working
-export default function RootLayout({
+export default function BlogLayout({
 	children,
 }: {
 	children: React.ReactNode;

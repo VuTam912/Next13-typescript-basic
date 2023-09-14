@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 // title of blogList
 
-export default function RootLayout({
+export default function ViewDetaiLayout({
 	children,
 }: {
 	children: React.ReactNode;
