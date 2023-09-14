@@ -37,7 +37,7 @@ const ViewDetailBlog = ({ params }: { params: { id: string } }) => {
 	// 	fetchData();
 	// }, [params.id]);
 
-	// solution 2: similiar fetch GET above
+	// solution 2: use library fetch to use GET
 	const fetcher: Fetcher<IBlog, string> = (url: string) =>
 		fetch(url).then((res) => res.json());
 

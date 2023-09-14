@@ -1,10 +1,17 @@
-'use client';
-
 import Link from 'next/link';
 import x from '@/styles/app.module.css'; // x from => module
 import y from '@/styles/hoidanit.module.css';
 import AppTable from '@/components/app.table';
 import { useEffect } from 'react';
+// title page..
+import { Metadata } from 'next';
+
+// title page on tab browser
+// note: sẽ không hiện title vì do 'use client'
+export const metadata: Metadata = {
+	title: 'HomePage',
+	description: 'Description HomePage...',
+};
 
 export default function Home() {
 	return (
